@@ -1,3 +1,19 @@
+<?php
+$veelgesteldeVragen = [
+  [
+    'vraag' => 'Wanneer is de open dag?',
+    'antwoord' => '19 november 2026',
+  ],
+  [
+    'vraag' => 'Kan ik iemand meenemen?',
+    'antwoord' => 'Ja, je kan je familie en vrienden meenemen.',
+  ],
+  [
+    'vraag' => 'Wat moet ik voorbereiden?',
+    'antwoord' => 'Nee, je hoeft niets voor te bereiden.',
+  ],
+];
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -49,18 +65,12 @@
       <div class="section-copy">
         <p class="eyebrow">03 · Handig om te weten</p>
         <h2>Vaakgestelde vragen</h2>
-        <details>
-          <summary>Wanneer is de open dag?</summary>
-          <p>19 november 2026</p>
-        </details>
-        <details>
-          <summary>Kan ik iemand meenemen?</summary>
-          <p>Ja, je kan je familie en vrienden meenemen.</p>
-        </details>
-        <details>
-          <summary>Wat moet ik voorbereiden?</summary>
-          <p>Nee, je hoeft niets voor te bereiden.</p>
-        </details>
+        <?php foreach ($veelgesteldeVragen as $veelgesteldeVraag): ?>
+          <details>
+            <summary><?php echo htmlspecialchars($veelgesteldeVraag['vraag'], ENT_QUOTES, 'UTF-8'); ?></summary>
+            <p><?php echo htmlspecialchars($veelgesteldeVraag['antwoord'], ENT_QUOTES, 'UTF-8'); ?></p>
+          </details>
+        <?php endforeach; ?>
         <details class="schedule-details">
           <summary>Hoe ziet het rooster er uit?</summary>
           <div class="schedule-image-wrap">
@@ -85,7 +95,7 @@
       <div class="offer-copy">
         <p class="eyebrow">Jouw toekomst begint hier</p>
         <h2>Wat we<br><em>aanbieden</em></h2>
-        <p>Een plek om te leren, te proberen en te groeien. Vind jouw opleiding en zet vandaag de eerste stap.</p>
+        <p>Bij de opleiding Software Developer leer je hoe je programma’s, websites en apps maakt. Je leert programmeren en werkt met verschillende programmeertalen en technieken. Ook leer je hoe je samenwerkt aan projecten en hoe je problemen kunt oplossen. Tijdens de opleiding doe je veel praktijkervaring op. Na de opleiding kun je bijvoorbeeld aan de slag als software developer, webdeveloper of programmeur.</p>
       </div>
       <div class="offer-image">
         <img src="img/Mbo/Mbo - techniek en technologie/Terheijdenseweg 350/IMG_9331.jpg" alt="Placeholder afbeelding voor het opleidingsaanbod">
